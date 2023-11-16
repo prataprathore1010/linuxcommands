@@ -1,3 +1,5 @@
-# hello-world
-i am new in coding and start A new project.
-to learn something new.
+# linux commands
+linux level commands
+-to monitor cpu utilization
+-to monitor log at server level
+
