@@ -1,0 +1,240 @@
+#linux commands
+#read last five line
+head -5 file
+#last five line
+tail -5 filename
+
+#short data 
+sort filename
+#reverse sort
+sort -r filename
+
+
+
+#to see unique content on file
+#first sort
+sort filename | uniq
+
+#A file has a 9 lines how to split this file in 3 different files in linux?
+split -l 3 file
+
+#how to search a word and display matching content from a file in linux
+grep "word" file
+
+#how to search a multiple word and display matching content from a file in linux
+egrep "word1|word2" file
+
+#use wild card
+for searching file
+ls x*
+#to create multiple file
+touch file{1..10}
+#HOw to shuffle content of file in linux
+shuf file
+#count no of lines in a file in linux
+wc -l file
+#how to compare and display difference between two files in linux
+diff -u fileA fileB
+#find a file in linux
+find /path/ -name  filename
+#to find a file in linux
+updatedb   #first
+locate file
+history | grep sort
+---------
+#how to check which executable is using for a command?
+which <command>
+#to use basic calculator 
+bc
+#to show calender
+cal year
+#to show uptime of server
+uptime 
+#To record activity on terminal
+script
+#to create shortcut comand
+alias l="ls -ltr"
+alias -p	
+#how to compress file
+gzip -k filename
+#to unzip
+gunzip filename
+#how to compress folder in linux
+tar -czf filename.tar.gz folder
+#to decompress
+tar -xzf filename.tar.gz folder
+#to remove folder 
+rm -rf filename
+#compress multiple file in linux
+zip filename.zip filaA fileB
+#download file from internet 
+wget url_of _file name
+
+#how tp call an API on linux
+curl http://
+#how to check application in linux installed or not
+rpm -qa | grep sql
+rpm -qa | grep java
+dnf list installed | grep software
+#To list avialble version of software
+yum list available | grep software_name
+#To start/stop a service on linux
+systemctl start/stop service_name.service
+#How to list all services on linux
+systemctllist-units --type=service --all
+
+===========================
+#how to list all existing environment variables on linux?
+printenv
+#Add a new environment variable in linux? temprory
+export java_home="/usr/lib/file"
+export PATH=$Java_HOME/bin:$PATH
+
+.bashrc
+
+test
+source var
+#to print a specific column from a csv file
+awk -F ,'{print $2}' file.csv
+#display starting two character of all line
+cut -c1-2 file.txt
+#display a specific line from a file?
+sed -n '5p' file.txt
+#How to replace a specific word with in a file?
+sed -n 's/from/to/g' file.txt
+ How to convert the content to uppercase or lowercase with in file
+ tr [:lower:] [:upper:] <file.txt
+ tr [:punct:] z <file.txt
+ tr [:digit:] z <file.txt
+  
+#to see file size
+ ls -lh 
+ truncate -s 50mb fileA
+ gzip fileA
+ 
+ # to display following line in verticle line
+ echo "ABCDE" | fold -w1
+ 
+ #How to change user or login as a different user in linux 
+ su username
+ 
+ #connecting to any m/c
+ ssh username@ip
+ 
+ #how to copy a file to a remote linux server
+ scp file user@hostname:/tmp/
+ 
+ #permission
+ #how to check permission 
+ ls -ltr
+ rwx  user 
+ rw-  group
+ r--- other
+ chmod a+rwx file.txt
+ a - user
+ g - group
+ o - other
+ a - all
+ #how to change ownership
+ chown user filename
+ chgrp group filename
+ 
+ #memory
+ #free ram space
+free -h
+free -th
+#percentage memory and cpu utilization
+top
+#check disk utilization
+du folder
+du -h
+#disk size
+df -h
+
+#system info
+hostname
+#check cpu core thread
+lscpu
+#for architeture
+arch
+#to size and space 
+lsblk
+#to see OS name
+uname -a
+cat /etc/os-releasegit
+
+#to check process managment
+ps -ef | grep nginx
+ps -ef | grep java
+
+#to get pid of a process
+pgrep servicename
+
+#to stop process id
+kill -9 pidname
+
+#how to stop process with name
+pkill servicename
+
+#to see active jobs
+jobs
+
+#to run in background
+bg
+
+#how to run script in backround
+nohup ./script >/dev/null &
+
+#to execute script
+bash scriptname
+
+#networking
+ifconfig
+ping www.google.com
+#to check port open or not
+telnet IP port
+#to check port is open or not in a server
+netstat -putan | grep portnumber
+#how to check all hubs in network path to reach a website
+traceroute www.google.com
+
+#to restart 
+reboot
+#To shutdown
+shutdown
+
+# to create a user 
+useradd username
+#to check
+id username
+#to set password
+passwd <type password>
+#user added in home directory
+cd /home
+ls -ltr
+
+#group add
+groupadd groupname
+#to see 
+cd /etc/group
+#to check group id or user id
+id groupname
+#to delete group
+userdel username
+#to add in a group
+usermod -G group name
+#How to schedule a script to run on a perticular time
+at 5:10 PM
+at> echo " At command ex"> at_demo.txt
+cntrl+d
+#TO CHECK script is running
+atq
+#redirect result to file
+ls > file_in_location.txt
+to add more content 
+ls >> file_in_location.txt
+=============================
+use aI for scripting
+sgpt --shell "To sell what is running"
+
+sgpt --code "create a bash script to delete file in a given location older than 30 days"
